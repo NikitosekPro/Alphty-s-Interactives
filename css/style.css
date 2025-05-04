@@ -1,0 +1,418 @@
+/* Global Fixes */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Body Background */
+body {
+    background-image: url(../img/another-background.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 150px;
+    padding: 0 20px;
+}
+
+/* Box */
+.box {
+    margin-top: 200px;
+    font-size: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 900px;
+    height: 500px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #ffffff;
+    backdrop-filter: blur(10px);
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Box Title & Text */
+.box-title,
+.box-text {
+    color: white;
+}
+
+/* Button */
+.box-btn {
+    transform: scale(1);
+    transition: transform 300ms ease-in-out;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid white;
+    backdrop-filter: blur(10px);
+    margin-top: 80px;
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.box-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Modal */
+.modal-text {
+    width: 500px;
+}
+
+/* Backdrop */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.backdrop.open-modal {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal Style */
+.modal {
+    background-color: #8010966e;
+    border: 1px solid rgba(255, 255, 255, 0.247);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    width: 70%;
+    max-width: 700px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.backdrop.open-modal .modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Modal Close Button */
+.modal-close-btn {
+    background-color: #ffffff42;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.486);
+    margin-top: 50px;
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Dark Mode */
+.dark-mode {
+    font-size: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 900px;
+    height: 500px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #ffffff;
+    backdrop-filter: blur(10px);
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Example */
+.dark-example {
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    user-select: none;
+}
+
+.dark-example_dark {
+    background-color: rgb(48, 48, 48);
+}
+
+.dark-mode-title {
+    color: white;
+}
+
+/* Toggle Styles */
+.toggle {
+    position: relative;
+}
+
+.toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: relative;
+    background-color: #bbbbbb;
+    width: 300px;
+    height: 120px;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.toggle-dot {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+input:checked + .slider {
+    background-color: #000000;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+input:checked + .slider .toggle-dot {
+    transform: translateX(180px);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* Login Styles */
+.login {
+    font-size: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 900px;
+    height: 500px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #ffffff;
+    backdrop-filter: blur(10px);
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 200px;
+}
+
+/* Login Input */
+.login-title,
+.login-text {
+    color: #ffffff;
+}
+
+.login-input {
+    width: 80%;
+    max-width: 500px;
+    height: 100px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #ffffff;
+    caret-color: #ffffff;
+    color: #ffffff;
+    font-size: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 1200px) {
+    .container {
+        padding: 10px;
+        gap: 100px;
+    }
+
+    .box,
+    .dark-mode,
+    .login {
+        width: 90%;
+        height: 400px;
+    }
+
+    .box-btn,
+    .modal-close-btn {
+        width: 250px;
+        height: 80px;
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 768px) {
+    .box,
+    .dark-mode,
+    .login {
+        width: 90%;
+        height: 400px;
+        padding: 40px;
+    }
+
+    .box-btn,
+    .modal-close-btn {
+        width: 300px;
+        height: 100px;
+        font-size: 20px;
+    }
+
+    .slider {
+        width: 300px;
+        height: 120px;
+    }
+
+    .modal {
+        width: 90%;
+        max-width: 600px;
+    }
+
+    .dark-example {
+        width: 320px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 621px) {
+    .box,
+    .dark-mode,
+    .login {
+        width: 95%;
+        padding: 20px;
+        height: auto;
+    }
+
+    .box-btn,
+    .modal-close-btn {
+        width: 180px;
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .login-input {
+        width: 100%;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .dark-example {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .slider {
+        width: 200px;
+        height: 80px;
+    }
+
+    .toggle-dot {
+        width: 60px;
+        height: 60px;
+        top: 10px;
+        left: 10px;
+    }
+
+    input:checked + .slider .toggle-dot {
+        transform: translateX(120px);
+    }
+
+    .icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .modal {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        font-size: 24px;
+    }
+
+    .modal-text {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .modal-title {
+        font-size: 24px;
+    }
+}
+
+
+
+
+
+/* NEW: global dark mode for the body */
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+  /* Override elements inside dark-example when dark mode is active */
+body.dark .dark-example {
+    background-color: #303030;
+}
+
+

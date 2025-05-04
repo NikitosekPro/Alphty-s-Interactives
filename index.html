@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dark Mode Toggle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <h2 class="box-title">Open Modal</h2>
+        <p class="box-text">Click the button to open modal</p>
+        <button class="box-btn" type="button">Open modal</button>
+    </div>
+
+    <div class="dark-mode">
+        <h2 class="dark-mode-title">Toggle dark mode</h2>
+        <div class="dark-example" id="darkExample">
+        <label class="toggle">
+            <input type="checkbox" id="themeToggle" />
+            <div class="slider">
+            <div class="toggle-dot">
+                <div class="icon">
+                <img src="./img/sun.svg" alt="icon" id="themeIcon" class="toggle-icon" />
+                </div>
+            </div>
+            </div>
+        </label>
+        </div>
+    </div>
+
+    <div class="login">
+        <h2 class="login-title">Login input</h2>
+        <input type="text" class="login-input">
+        <p class="login-text"></p>
+    </div>
+</div>
+
+    <div class="backdrop">
+    <div class="modal">
+        <h2 class="modal-title">Modal</h2>
+        <p class="modal-text">To close modal, press the button or press on the backdrop.</p>
+        <button class="modal-close-btn" type="button">Close modal</button>
+    </div>
+</div>
+
+<script type="module" src="./js/script.js"></script>
+</body>
+</html>
+
